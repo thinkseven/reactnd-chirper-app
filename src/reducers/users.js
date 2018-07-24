@@ -1,10 +1,13 @@
-import { combineReducers } from 'redux'
-import authedUser from './authedUser'
-import users from './users'
-import tweets from './tweets'
+import { RECEIVE_USERS } from '../actions/users'
 
-export default combineReducers({
-  authedUser,
-  users,
-  tweets,
-})
+export default function users(state = {}, action) {
+  switch (action.type) {
+    case RECEIVE_USERS:
+      return {
+        ...state,
+        ...action.users,
+      }
+    default:
+      return state
+  }
+}
