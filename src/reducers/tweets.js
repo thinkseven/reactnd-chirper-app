@@ -6,6 +6,13 @@ export default function tweets(state = {}, action) {
       return {
         ...state,
         ...action.tweets,
+        /*
+        https://redux.js.org/recipes/usingobjectspreadoperator
+        Similiar to
+        Object.assign({}, state, {
+          tweets: action.tweets,
+        })
+        */
       }
     default:
       return state

@@ -6,6 +6,13 @@ export default function users(state = {}, action) {
       return {
         ...state,
         ...action.users,
+        /*
+        https://redux.js.org/recipes/usingobjectspreadoperator
+        Similiar to
+        Object.assign({}, state, {
+          users: action.users,
+        })
+        */
       }
     default:
       return state
